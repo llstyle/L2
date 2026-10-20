@@ -1,0 +1,23 @@
+{
+  "version": 1,
+  "author": "L2 DEMTPI",
+  "editor": "wokwi",
+  "parts": [
+    { "type": "wokwi-esp32-devkit-v1", "id": "esp", "top": 0, "left": 0, "attrs": {} },
+    { "type": "wokwi-mpu6050", "id": "imu1", "top": -140, "left": -40, "attrs": {} },
+    { "type": "wokwi-led", "id": "led1", "top": -60, "left": 190, "attrs": { "color": "red" } },
+    { "type": "wokwi-resistor", "id": "r1", "top": 40, "left": 170, "rotate": 90, "attrs": { "value": "220" } }
+  ],
+  "connections": [
+    [ "esp:TX0", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX0", "$serialMonitor:TX", "", [] ],
+    [ "imu1:VCC", "esp:3V3", "red", [ "v0" ] ],
+    [ "imu1:GND", "esp:GND.2", "black", [ "v0" ] ],
+    [ "imu1:SDA", "esp:D21", "green", [ "v0" ] ],
+    [ "imu1:SCL", "esp:D22", "blue", [ "v0" ] ],
+    [ "esp:D2", "r1:2", "orange", [ "h0" ] ],
+    [ "r1:1", "led1:A", "orange", [ "v0" ] ],
+    [ "led1:C", "esp:GND.1", "black", [ "v0" ] ]
+  ],
+  "dependencies": {}
+}
