@@ -100,7 +100,7 @@
 
 // Имитация коротких ударов по оси X (опыт 4).
 // Удары длиной 1, 2 и 3 отсчёта на 3-й, 6-й и 9-й секунде.
-#define SIMULATE_SHOCK 1
+#define SIMULATE_SHOCK 0
 #define SIM_SHOCK_G 1.5f // амплитуда удара, g
 
 #if (MEDIAN_WINDOW % 2) == 0
